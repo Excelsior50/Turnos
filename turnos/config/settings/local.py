@@ -11,7 +11,11 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'postgres',
+        'USER': 'postgres.kzvbibuhtrzsgldlqumt',
+        'PASSWORD': 'TZH3#CBtCZ2SHc$',
+        'HOST': 'aws-0-sa-east-1.pooler.supabase.com',
+        'PORT': '6543'
     }
 }
 
