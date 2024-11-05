@@ -15,6 +15,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'app.CustomUser'
 
 # Application definition
 
@@ -29,6 +32,7 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     'config',
+    'app',
 ]
 
 THIRD_APPS = [
@@ -69,6 +73,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
